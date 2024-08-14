@@ -1,0 +1,271 @@
+@charset "UTF-8";
+* {
+  font-family: 微軟正黑體;
+  letter-spacing: 0.5px;
+  position: relative;
+  transition-duration: 0.5s;
+}
+
+body, html {
+  margin: 0px;
+  background-color: #F3EFE3;
+}
+
+a {
+  text-decoration: none;
+}
+
+.top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0px;
+}
+.top .ugly {
+  cursor: pointer;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav_sty {
+  padding: 5px 15px;
+  color: #000;
+  cursor: pointer;
+  font-size: 14px;
+}
+.nav_sty:hover {
+  color: #014d0e;
+}
+
+.reddot {
+  display: none;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 100%;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  border: solid 2px red;
+}
+
+.cartimg {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  z-index: 7;
+  right: 20px;
+  bottom: 30px;
+  background-image: url("https://i.imgur.com/hbyvzo1.png");
+  background-color: #fff;
+  border: solid 1px;
+  background-size: cover;
+  background-position: 50% 50%;
+  border-radius: 100%;
+  cursor: pointer;
+}
+.cartimg:hover {
+  bottom: 40px;
+  box-shadow: 0px 0px 5px #014d0e;
+}
+
+.cartnote {
+  position: fixed;
+  display: none;
+  right: 0px;
+  bottom: 30px;
+  width: 350px;
+  padding: 30px 5px;
+  z-index: 8;
+  background-color: #fff;
+  text-align: center;
+  align-content: center;
+}
+
+.delbtn {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding: 0px 5px;
+  border: solid 2px black;
+  background-color: #fff;
+  z-index: 8;
+}
+.delbtn:hover {
+  background-color: #000;
+  color: #fff;
+  border: solid 2px black;
+}
+
+#selectlist {
+  display: flex;
+  flex-flow: row wrap;
+  font-size: 13px;
+}
+#selectlist .name, #selectlist .minus, #selectlist .num, #selectlist .plus, #selectlist .price, #selectlist .delbtn2 {
+  margin: 10px;
+  align-content: center;
+}
+#selectlist .name {
+  width: 130px;
+}
+#selectlist .plus {
+  cursor: pointer;
+}
+#selectlist .price {
+  color: red;
+}
+#selectlist .minus {
+  cursor: pointer;
+}
+#selectlist .delbtn2 {
+  cursor: pointer;
+}
+
+.emptycart::after {
+  content: "✦ You have not selected any products. ✦";
+  display: block;
+  width: 100%;
+  padding: 10px;
+}
+
+#total {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+#total .tname, #total .tprice {
+  padding: 0px 10px;
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: 500;
+}
+#total .tprice {
+  color: red;
+}
+#total .tprice::before {
+  content: "NTD$ ";
+  font-size: 15px;
+  color: black;
+}
+
+.wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.greyscreen {
+  display: none;
+  top: -20px;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  z-index: 4;
+}
+
+.middle {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+.middle .banner {
+  background-image: url("https://shoplineimg.com/6129efefcb5f400016514425/652904c32406a2001a274a5f/2160x.webp?source_format=png");
+  height: 310px;
+  width: 100%;
+  min-width: 200px;
+  max-width: 1000px;
+  background-size: cover;
+  background-position: center 75%;
+  margin: 30px 0px;
+}
+
+#itemlist {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  max-width: 1000px;
+  height: 100%;
+  margin-bottom: 30px;
+}
+#itemlist .box {
+  margin: 10px;
+  padding: 10px;
+  width: 205px;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  top: 0px;
+  cursor: pointer;
+}
+#itemlist .box img {
+  width: 200px;
+  height: 200px;
+}
+#itemlist .box .up {
+  position: absolute;
+  left: 13px;
+}
+#itemlist .box:hover {
+  top: -10px;
+}
+#itemlist .box:hover .up {
+  opacity: 0%;
+}
+#itemlist .box .name, #itemlist .box .price, #itemlist .box .addbtn {
+  text-align: center;
+  margin-top: 10px;
+}
+#itemlist .box .name {
+  font-weight: 600;
+  padding: 5px;
+  font-size: 14px;
+}
+#itemlist .box .price {
+  color: #0c7383;
+  font-weight: 900;
+  font-size: 14px;
+}
+#itemlist .box .price::before {
+  content: "NTD$";
+  font-size: 12px;
+  color: #0c7383;
+}
+#itemlist .box .addbtn {
+  padding: 5px;
+  width: 150px;
+  margin-top: 10px;
+  border: solid 1px;
+  border-radius: 5px;
+  font-weight: 900;
+  font-size: 14px;
+}
+#itemlist .box .addbtn:hover {
+  background-color: #014d0e;
+  color: #fff;
+}
+
+.bottom {
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  align-content: center;
+  font-size: 10px;
+  background-color: #014d0e;
+  color: #fff;
+}
+
+.bottom_line {
+  border-bottom: solid 1px #014d0e;
+}
